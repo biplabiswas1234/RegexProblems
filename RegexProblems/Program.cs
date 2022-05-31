@@ -10,7 +10,10 @@ namespace RegexProblems
                 UserRegistration userRegistration = new UserRegistration();
                 Console.WriteLine("Enter the First Name");
                 string firstName = Console.ReadLine();
-                userRegistration.checkfirstname(firstName);
+                userRegistration.checkFirstName(firstName);
+                Console.WriteLine("Enter the last Name");
+                string lastName = Console.ReadLine();
+                userRegistration.checkLastName(lastName);
             }
         }
     }
