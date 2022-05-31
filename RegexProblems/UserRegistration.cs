@@ -14,6 +14,7 @@ namespace RegexProblems
         public string EmailAddress = "^[A-Za-z0-9]{3,}@[A-Za-z]{3,}.[a-zA-Z]{2,}$";
         public string MobileNum = "^[+][0-9]{2}[ ][0-9]{10}$";
         public string PassWord = ("^[A-z0-9a-z@#&*+]{8,}$");
+        public string PassWord2 = ("^[A-Z]{1,}[A-z0-9a-z@#&*+.,]{8,}$");
         public void checkFirstName(string Firstname)
         {
             Regex Regex = new Regex(FirstName);
@@ -65,6 +66,18 @@ namespace RegexProblems
         public void ValidatePassWord1(string passWord)
         {
             Regex regex = new Regex(PassWord);
+            if (regex.IsMatch(passWord))
+            {
+                Console.WriteLine("PassWord is valid :" + passWord);
+            }
+            else
+            {
+                Console.WriteLine("PassWord is invalid");
+            }
+        }
+        public void ValidatePassWord2(string passWord)
+        {
+            Regex regex = new Regex(PassWord2);
             if (regex.IsMatch(passWord))
             {
                 Console.WriteLine("PassWord is valid :" + passWord);
