@@ -29,6 +29,9 @@ namespace RegexProblems
                 Console.WriteLine("Enter your password rule 3");
                 string password3 = Console.ReadLine();
                 userRegistration.ValidatePassWord3(password3);
+                Console.WriteLine("Enter your password rule 4");
+                string password4 = Console.ReadLine();
+                userRegistration.ValidatePassWord3(password4);
             }
         }
     }

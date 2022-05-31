@@ -16,6 +16,7 @@ namespace RegexProblems
         public string PassWord = "^[A-z0-9a-z@#&*+]{8,}$";
         public string PassWord2 = "^[A-Z]{1,}[A-z0-9a-z@#&*+.,]{8,}$";
         public string PassWord3 = "^[A-Z]{1,}[0-9A-Za-z!@#$.,';%^&*-]{6,}[0-9]{1,}$";
+        public string PassWord4 = "^[A-Z]{1,}[A-Za-z0-9]{5,}[!@#$%.,'-^&*+]{1}[0-9]{1,}$";
 
         public void checkFirstName(string Firstname)
         {
@@ -92,6 +93,18 @@ namespace RegexProblems
         public void ValidatePassWord3(string passWord)
         {
             Regex regex = new Regex(PassWord3);
+            if (regex.IsMatch(passWord))
+            {
+                Console.WriteLine("PassWord is valid :" + passWord);
+            }
+            else
+            {
+                Console.WriteLine("PassWord is invalid");
+            }
+        }
+        public void ValidatePassWord4(string passWord)
+        {
+            Regex regex = new Regex(PassWord4);
             if (regex.IsMatch(passWord))
             {
                 Console.WriteLine("PassWord is valid :" + passWord);
