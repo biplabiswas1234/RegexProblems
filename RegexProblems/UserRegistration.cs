@@ -17,6 +17,7 @@ namespace RegexProblems
         public string PassWord2 = "^[A-Z]{1,}[A-z0-9a-z@#&*+.,]{8,}$";
         public string PassWord3 = "^[A-Z]{1,}[0-9A-Za-z!@#$.,';%^&*-]{6,}[0-9]{1,}$";
         public string PassWord4 = "^[A-Z]{1,}[A-Za-z0-9]{5,}[!@#$%.,'-^&*+]{1}[0-9]{1,}$";
+        public string Email_Id = ("^[A-Za-z0-9]+([.+_-]?[A-Za-z0-9])*@[A-Za-z0-9]+.([c]{1}[o]{1}[m]{1})*([n]{1}[e]{1}[t]{1})*[,]*([.][a]{1}[u]{1})*([.][c]{1}[o]{1}[m]{1})*$");
 
         public void checkFirstName(string Firstname)
         {
@@ -108,6 +109,18 @@ namespace RegexProblems
             if (regex.IsMatch(passWord))
             {
                 Console.WriteLine("PassWord is valid :" + passWord);
+            }
+            else
+            {
+                Console.WriteLine("PassWord is invalid");
+            }
+        }
+        public void ValidateAllEmail(string Email)
+        {
+            Regex regex = new Regex(Email_Id);
+            if (regex.IsMatch(Email))
+            {
+                Console.WriteLine("PassWord is valid :" + Email);
             }
             else
             {

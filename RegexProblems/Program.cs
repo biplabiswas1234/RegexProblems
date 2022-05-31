@@ -32,6 +32,9 @@ namespace RegexProblems
                 Console.WriteLine("Enter your password rule 4");
                 string password4 = Console.ReadLine();
                 userRegistration.ValidatePassWord3(password4);
+                Console.WriteLine("Enter the email id");
+                string EmailID = Console.ReadLine();
+                userRegistration.ValidateAllEmail(EmailID);
             }
         }
     }
