@@ -14,8 +14,11 @@ namespace RegexProblems
                 Console.WriteLine("Enter the last Name");
                 string lastName = Console.ReadLine();
                 userRegistration.checkLastName(lastName);
+                Console.WriteLine("Enter the last Name");
+                string emailID = Console.ReadLine();
+                userRegistration.checkEmail(emailID);
             }
         }
     }
-}
+}        
 
