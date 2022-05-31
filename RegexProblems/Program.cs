@@ -26,6 +26,9 @@ namespace RegexProblems
                 Console.WriteLine("Enter your password rule 2");
                 string password2 = Console.ReadLine();
                 userRegistration.ValidatePassWord2(password2);
+                Console.WriteLine("Enter your password rule 3");
+                string password3 = Console.ReadLine();
+                userRegistration.ValidatePassWord3(password3);
             }
         }
     }
