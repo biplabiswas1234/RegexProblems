@@ -14,11 +14,14 @@ namespace RegexProblems
                 Console.WriteLine("Enter the last Name");
                 string lastName = Console.ReadLine();
                 userRegistration.checkLastName(lastName);
-                Console.WriteLine("Enter the last Name");
+                Console.WriteLine("Enter the email id");
                 string emailID = Console.ReadLine();
                 userRegistration.checkEmail(emailID);
+                Console.WriteLine("Enter the phone number");
+                string phoneNum = Console.ReadLine();
+                userRegistration.ValidateMobileNum(phoneNum);
             }
         }
     }
-}        
+}
 
