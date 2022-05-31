@@ -20,6 +20,9 @@ namespace RegexProblems
                 Console.WriteLine("Enter the phone number");
                 string phoneNum = Console.ReadLine();
                 userRegistration.ValidateMobileNum(phoneNum);
+                Console.WriteLine("Enter your password");
+                string password = Console.ReadLine();
+                userRegistration.ValidatePassWord1(password);
             }
         }
     }
