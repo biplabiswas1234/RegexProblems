@@ -1,78 +1,135 @@
 using NUnit.Framework;
-using RegexProblems;
+using RegexExpection;
 
-namespace UserRegnRegexTest
+namespace UserRegistrationTesting
 {
-
     public class Tests
     {
-        UserRegistration registration;
+        Validation validation;
         [SetUp]
         public void Setup()
         {
-            registration = new UserRegistration();
+            validation = new Validation();
         }
 
         [Test]
-        public void ValidFirstName()
+        public void firstName()
         {
-            string FirstName = "Biplab";
-            string expected = "First Name is valid";
-
-            string actual = registration.checkFirstName(FirstName);
-
-            Assert.AreEqual(expected, actual);
+            string firstName = "Biplab";
+            string result = null;
+            try
+            {
+                result = validation.First_Name(firstName);
+            }
+            catch (RegexCustomExpection ex)
+            {
+                Assert.AreEqual("First Name is Valid", ex.Message);
+            }
         }
+
         [Test]
-        public void ValidLastName()
+        public void lastName()
         {
-            string LastName = "Biswas";
-            string expected = "Last Name is valid";
-
-            string actual = registration.checkLastName(LastName);
-
-            Assert.AreEqual(expected, actual);
+            string Name = "Biswas";
+            string result = null;
+            try
+            {
+                result = validation.Last_Name(Name);
+            }
+            catch (RegexCustomExpection ex)
+            {
+                Assert.AreEqual("Last Name is Valid", ex.Message);
+            }
         }
+
         [Test]
-        public void ValidEmail()
+        public void email_Id()
         {
             string Email = "biplabiswas1234@gmail.com";
-            string expected = "Email is valid";
-
-            string actual = registration.checkEmail(Email);
-
-            Assert.AreEqual(expected, actual);
+            string result = null;
+            try
+            {
+                result = validation.EmailId(Email);
+            }
+            catch (RegexCustomExpection ex)
+            {
+                Assert.AreEqual("EmailId is valid", ex.Message);
+            }
         }
+
         [Test]
-        public void ValidNumber()
+        public void Mobile_Number()
         {
-            string Mobile = "+91 9954979057";
-            string expected = "Mobile Number is valid";
-
-            string actual = registration.ValidateMobileNum(Mobile);
-
-            Assert.AreEqual(expected, actual);
+            string MobileNumber = "91 9954979057";
+            string result = null;
+            try
+            {
+                result = validation.Mobile(MobileNumber);
+            }
+            catch (RegexCustomExpection ex)
+            {
+                Assert.AreEqual("Password is valid", ex.Message);
+            }
         }
+
         [Test]
-        public void ValidPassword()
+        public void Password_1()
         {
-            string Password = "Biplab123@784114";
-            string expected = "Password is valid";
-
-            string actual = registration.ValidatePassWord4(Password);
-
-            Assert.AreEqual(expected, actual);
+            string Password = "Biplab097";
+            string result = null;
+            try
+            {
+                result = validation.Validate_PassWord(Password);
+            }
+            catch (RegexCustomExpection ex)
+            {
+                Assert.AreEqual("Password is valid", ex.Message);
+            }
         }
+
         [Test]
-        public void ValidateEmail()
+        public void Password_Firsct_One_Upper_Case()
         {
-            string email = "xyz123@gmail.com";
-            string expected = "Email is valid";
+            string Password = "Biplab1234";
+            string result = null;
+            try
+            {
+                result = validation.Validate_PassWord2(Password);
+            }
+            catch (RegexCustomExpection ex)
+            {
+                Assert.AreEqual("Password is valid", ex.Message);
+            }
+        }
 
-            string actual = registration.ValidateAllEmail(email);
+        [Test]
+        public void Password_AtEnd_One_Number()
+        {
+            string Passwords = "Biplabiswas097";
+            string result = null;
+            try
+            {
+                result = validation.Validate_PassWord3(Passwords);
+            }
+            catch (RegexCustomExpection ex)
+            {
+                Assert.AreEqual("Password is valid", ex.Message);
+            }
+        }
 
-            Assert.AreEqual(expected, actual);
+        [Test]
+        public void Password_One_Special_Char()
+        {
+            string Password = "Biplabiswas@097";
+            string result = null;
+            try
+            {
+                result = validation.Validate_PassWord4(Password);
+            }
+            catch (RegexCustomExpection ex)
+            {
+                Assert.AreEqual("Password is valid", ex.Message);
+            }
         }
     }
-
 }

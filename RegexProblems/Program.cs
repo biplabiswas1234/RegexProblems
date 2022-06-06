@@ -1,42 +1,85 @@
-﻿using System;
+﻿using RegexExpection;
+using System;
 
-namespace RegexProblems
+namespace RegexLambda
 {
-    internal class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
+            Validation userRegistration = new Validation();
+            int option = 0;
+            do
             {
-                UserRegistration userRegistration = new UserRegistration();
-                Console.WriteLine("Enter the First Name");
-                string firstName = Console.ReadLine();
-                userRegistration.checkFirstName(firstName);
-                Console.WriteLine("Enter the last Name");
-                string lastName = Console.ReadLine();
-                userRegistration.checkLastName(lastName);
-                Console.WriteLine("Enter the email id");
-                string emailID = Console.ReadLine();
-                userRegistration.checkEmail(emailID);
-                Console.WriteLine("Enter the phone number");
-                string phoneNum = Console.ReadLine();
-                userRegistration.ValidateMobileNum(phoneNum);
-                Console.WriteLine("Enter your password rule 1");
-                string password = Console.ReadLine();
-                userRegistration.ValidatePassWord1(password);
-                Console.WriteLine("Enter your password rule 2");
-                string password2 = Console.ReadLine();
-                userRegistration.ValidatePassWord2(password2);
-                Console.WriteLine("Enter your password rule 3");
-                string password3 = Console.ReadLine();
-                userRegistration.ValidatePassWord3(password3);
-                Console.WriteLine("Enter your password rule 4");
-                string password4 = Console.ReadLine();
-                userRegistration.ValidatePassWord3(password4);
-                Console.WriteLine("Enter the email id");
-                string EmailID = Console.ReadLine();
-                userRegistration.ValidateAllEmail(EmailID);
-            }
+                Console.WriteLine("1: For First name validation");
+                Console.WriteLine("2: For Last name validation");
+                Console.WriteLine("3: For Email validation");
+                Console.WriteLine("4: For Mobile Number");
+                Console.WriteLine("5: For Password Min Eight Char");
+                Console.WriteLine("6: For Password At Least One Upper Case");
+                Console.WriteLine("7: For Password At Least One Number");
+                Console.WriteLine("8: For Password One Special Char");
+                Console.WriteLine("9: For Email");
+                Console.WriteLine("0: To stop");
+                option = int.Parse(Console.ReadLine());
+                switch (option)
+                {
+                    
+                    case 1:
+                        Console.WriteLine("Enter a First Name");
+                        string FirstName = Console.ReadLine();
+                        userRegistration.First_Name(FirstName);
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter a Last Name");
+                        string LastName = Console.ReadLine();
+                        userRegistration.Last_Name(LastName);
+                        break;
+                    case 3:
+                        Console.WriteLine("Enter your EmailId: ");
+                        string EmailId = Console.ReadLine();
+                        userRegistration.EmailId(EmailId);
+                        break;
+                    case 4:
+                        Console.WriteLine("Enter a Mobile Number");
+                        string MobileNumber = Console.ReadLine();
+                        userRegistration.Mobile(MobileNumber);
+                        break;
+                    case 5:
+                        Console.WriteLine("Enter a Password");
+                        string PasswordOne = Console.ReadLine();
+                        userRegistration.Validate_PassWord(PasswordOne);
+                        break;
+                    case 6:
+                        Console.WriteLine("Enter a Password");
+                        string PasswordTwo = Console.ReadLine();
+                        userRegistration.Validate_PassWord2(PasswordTwo);
+                        break;
+                    case 7:
+                        Console.WriteLine("Enter a Password");
+                        string PasswordThree = Console.ReadLine();
+                        userRegistration.Validate_PassWord3(PasswordThree);
+                        break;
+                    case 8:
+                        Console.WriteLine("Enter a Password");
+                        string PasswordFour = Console.ReadLine();
+                        userRegistration.Validate_PassWord4(PasswordFour);
+                        break;
+                        
+                    case 9:
+                        Console.WriteLine("Enter  Email");
+                        string email= Console.ReadLine();
+                        userRegistration.Validate_AllEmails(email);
+                        break;
+
+                    case 0:
+                        option = 0;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input");
+                        break;
+                }
+            } while (option != 0);
         }
     }
 }
-
