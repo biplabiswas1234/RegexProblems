@@ -24,7 +24,7 @@ namespace RegexLambda
                 option = int.Parse(Console.ReadLine());
                 switch (option)
                 {
-                    
+
                     case 1:
                         Console.WriteLine("Enter a First Name");
                         string FirstName = Console.ReadLine();
@@ -65,10 +65,10 @@ namespace RegexLambda
                         string PasswordFour = Console.ReadLine();
                         userRegistration.Validate_PassWord4(PasswordFour);
                         break;
-                        
+
                     case 9:
                         Console.WriteLine("Enter  Email");
-                        string email= Console.ReadLine();
+                        string email = Console.ReadLine();
                         userRegistration.Validate_AllEmails(email);
                         break;
 

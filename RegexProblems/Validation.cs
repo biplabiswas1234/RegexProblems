@@ -33,9 +33,10 @@ namespace RegexExpection
                     throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.FIRSTNAME_INVALID, "First Name is invalid");
                 }
             }
-            catch
+            catch(RegexCustomExpection ex)
             {
-                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.FIRSTNAME_INVALID, "First Name is invalid");
+                Console.WriteLine(ex.Message);
+                return ex.Message;
             }
         }
         public string Last_Name(string lastName)
@@ -53,9 +54,10 @@ namespace RegexExpection
                     throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.LASTNAME_INVALID, "Last Name is invalid");
                 }
             }
-            catch
+            catch (RegexCustomExpection ex)
             {
-                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.LASTNAME_INVALID, "Last Name is invalid");
+                Console.WriteLine(ex.Message);
+                return ex.Message;
             }
         }
         public string EmailId(string Email_Id)
@@ -73,9 +75,10 @@ namespace RegexExpection
                     throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.EMAILID_INVALID, "Email is invalid");
                 }
             }
-            catch
+            catch (RegexCustomExpection ex)
             {
-                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.EMAILID_INVALID, "Email is invalid");
+                Console.WriteLine(ex.Message);
+                return ex.Message;
             }
         }
         public string Mobile(string Mobile_Num)
@@ -113,9 +116,10 @@ namespace RegexExpection
                     throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
                 }
             }
-            catch
+            catch (RegexCustomExpection ex)
             {
-                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
+                Console.WriteLine(ex.Message);
+                return ex.Message;
             }
         }
         public string Validate_PassWord2(string passWord2)
@@ -133,9 +137,10 @@ namespace RegexExpection
                     throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
                 }
             }
-            catch
+            catch (RegexCustomExpection ex)
             {
-                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
+                Console.WriteLine(ex.Message);
+                return ex.Message;
             }
         }
         public string Validate_PassWord3(string passWord3)
@@ -153,9 +158,10 @@ namespace RegexExpection
                     throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
                 }
             }
-            catch
+            catch (RegexCustomExpection ex)
             {
-                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
+                Console.WriteLine(ex.Message);
+                return ex.Message;
             }
         }
         public string Validate_PassWord4(string passWord4)
@@ -173,9 +179,10 @@ namespace RegexExpection
                     throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
                 }
             }
-            catch
+            catch (RegexCustomExpection ex)
             {
-                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.PASSWORD_INVALID, "Password is invalid");
+                Console.WriteLine(ex.Message);
+                return ex.Message;
             }
         }
         public string Validate_AllEmails(string All_Email)
@@ -193,9 +200,10 @@ namespace RegexExpection
                     throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.EMAILID_INVALID, "Email is invalid");
                 }
             }
-            catch
+            catch (RegexCustomExpection ex)
             {
-                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.EMAILID_INVALID, "Email is invalid");
+                Console.WriteLine(ex.Message);
+                return ex.Message;
             }
         }
     }
